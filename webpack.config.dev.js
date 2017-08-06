@@ -1,12 +1,14 @@
 import webpack from 'webpack';
 import path from 'path';
 
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
 export default {
     devtool: 'source-map',
     entry: [
         'babel-polyfill',
-        'webpack-hot-middleware/client?reload=true',
         'react-hot-loader/patch',
+        'webpack-hot-middleware/client?reload=true',
         path.resolve(__dirname, 'src/index')
     ],
     target: 'web',
@@ -24,7 +26,7 @@ export default {
     ],
     module: {
         loaders: [
-            {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel-loader']},
+            {test: /\.js$/, exclude: path.join(__dirname, 'node_modules'), loaders: ['babel-loader']},
             {test: /(\.css)$/, loaders: ['style-loader', 'css-loader']},
             {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader'},
             {test: /\.(woff|woff2)$/, loader: 'url-loader?prefix=font/&limit=5000'},
