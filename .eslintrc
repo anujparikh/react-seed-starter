@@ -1,0 +1,60 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:react/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jquery": true,
+    "mocha": true
+  },
+  "rules": {
+    "quotes": ["error", "single"],
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ],
+    "no-debugger": "error",
+    "no-var": "error",
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-trailing-spaces": "error",
+    "eol-last": [
+      "error",
+      "never"
+    ],
+    "no-unused-vars": "error",
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": [
+          "_bar"
+        ]
+      }
+    ],
+    "no-alert": "error",
+    "no-lone-blocks": "error",
+    "jsx-quotes": [
+      "error",
+      "prefer-double"
+    ]
+  }
+}
