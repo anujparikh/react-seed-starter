@@ -21,7 +21,8 @@ app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname, '../src/index.html'));
 });
 
-app.listen(port, function(err) {
+const server = app.listen(port, function(err) {
+    server.keepAliveTimeout = 0;
     if (err) {
         console.log(err);
     } else {
